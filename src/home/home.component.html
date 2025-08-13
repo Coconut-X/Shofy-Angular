@@ -1,0 +1,65 @@
+<app-navbar></app-navbar>
+<div class="homePage">
+    <div class="hero-banner">
+                <div class="slider-buttons">
+                        <button 
+                            class="slider-btn" 
+                            [class.active]="activeSlider === 0" 
+                            (click)="setActiveSlider(0)"></button>
+                        <button 
+                            class="slider-btn" 
+                            [class.active]="activeSlider === 1" 
+                            (click)="setActiveSlider(1)"></button>
+                        <button 
+                            class="slider-btn" 
+                            [class.active]="activeSlider === 2" 
+                            (click)="setActiveSlider(2)"></button>
+                </div>
+        <img src="https://shofy-angular.vercel.app/assets/img/slider/2/shape/shape-1.png" alt="Banner Image" class="banner-leaf">
+        <img src="https://shofy-angular.vercel.app/assets/img/slider/2/shape/shape-2.png" alt="Bubble" class="banner-bubble">
+        <div class="circle"></div>
+        <div class="donut-mask"></div>
+        <img src={{sliderImage}} alt="" class="slider-images">
+
+        <div class="slider-info">
+            <div class="msg1">{{message1}}</div>
+            <div class="msg2">{{message2}}</div>
+            <div class="shop-button">Shop Collection</div>
+        </div>
+    </div>
+
+    <div class="category-banners">
+        @for (item of fashionCategories; track $index) {
+            <div class="category-banner">
+                <img src={{item[2]}} alt="">
+                <div class="category-name">{{item[1]}}</div>
+
+                <button (click)="goToCategory(item[1].toString())">
+                    Shop Now
+                    <img class="arrow-icon-button" [src]="rightArrowIcon" alt="→" style="width:18px;height:15px;vertical-align:middle;margin-left:8px;" />
+                </button>
+
+            </div>
+        }
+    </div>
+
+    
+    <div class="popular">
+        <div class="shop-by-category">
+            <p class="arch-text-wrapper">
+                <span class="arch-text">Shop by Category</span>
+                <img class="arch-icon" [src]="archIcon" alt="" />
+            </p>
+        </div>
+
+        <div class="popular-text">
+            Popular on the Shofy Store
+        </div>
+
+        <div class="product-carousel">
+
+        </div>
+        
+    </div>
+
+</div>
