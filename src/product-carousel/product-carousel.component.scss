@@ -1,10 +1,11 @@
 .product-carousel-div {
-  width: 100%;
+  width: 100%; 
   max-width: 1200px;
   padding: 20px;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  background: none;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
   user-select: none; /* Prevents text selection while dragging */
 }
 
@@ -25,16 +26,18 @@
 // Each individual product card
 .image-item {
   flex: 0 0 280px; /* Each item is 280px wide */
-  background: white;
-  border-radius: 12px;
+  background: none;
+  border: none;
+  border-radius: 0;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: none;
   transition: transform 0.2s ease;
+  border: 2px solid #f3f4f8;
 }
 
-.image-item:hover {
-  transform: translateY(-5px);
-}
+// .image-item:hover {
+//   transform: translateY(-5px);
+// }
 
 .image-item img {
   width: 100%;
@@ -79,34 +82,44 @@
 
 // Custom Scrollbar Styles
 .scrollbar {
+    margin-top: 40px;
   position: relative;
   height: 20px;
   width: 100%;
 }
+
 
 .scrollbar-track {
   position: absolute;
   top: 50%;
   left: 0;
   right: 0;
-  height: 4px;
+  height: 2px;
   background: #e9ecef;
   border-radius: 2px;
   transform: translateY(-50%);
+  transition: height 0.2s;
 }
+
 
 .scrollbar-thumb {
   position: absolute;
   top: 50%;
-  height: 12px;
-  background: #007bff;
-  border-radius: 6px;
+  height: 2px;
+  background: #000000;
   cursor: grab;
   transform: translateY(-50%);
+  transition: height 0.2s;
 }
 
 .scrollbar-thumb:active,
-.scrollbar-thumb.dragging {
+.scrollbar-thumb:hover,
+.scrollbar-thumb.dragging,
+.scrollbar-track:active,
+.scrollbar-track:hover,
+.scrollbar-track.dragging,
+.scrollbar:hover .scrollbar-thumb,
+.scrollbar:hover .scrollbar-track {
+  height: 7px;
   cursor: grabbing;
-  background: #0056b3;
 }
