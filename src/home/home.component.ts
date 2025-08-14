@@ -3,10 +3,11 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from '../navbar/navbar.component';
+import { ProductCarouselComponent } from '../product-carousel/product-carousel.component';
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, RouterOutlet, NavbarComponent],
+  imports: [CommonModule, RouterOutlet, NavbarComponent, ProductCarouselComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   standalone: true ,

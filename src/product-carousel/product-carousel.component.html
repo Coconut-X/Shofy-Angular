@@ -1,0 +1,30 @@
+
+<div class="product-carousel-div">
+  <!-- This is the viewport that hides the overflowing images -->
+  <div class="images" #imagesContainer>
+    <!-- This is the row of images that will be scrolled -->
+    <div class="images-row" #imagesRow>
+      @for(product of products; track $index) {
+        <div class="image-item">
+          <img [src]="product.image" [alt]="product.name" />
+          <div class="product-info">
+            <p class="product-name">{{ product.name }}</p>
+            <p class="product-price">From &#36;{{ product.price }}</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+
+  <!-- This is the custom scrollbar -->
+  <div class="scrollbar" #scrollbarContainer>
+    <div class="scrollbar-track"></div>
+    <div 
+      class="scrollbar-thumb" 
+      #scrollbarThumb
+      (mousedown)="startDrag($event)"
+      (touchstart)="startDrag($event)">
+    </div>
+  </div>
+</div>
