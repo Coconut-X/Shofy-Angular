@@ -315,3 +315,18 @@ $slider-button-size: 11px;
   color: black;
   text-align: center;
 }
+
+
+
+.footer{
+  width: 90%;
+  // border: 2px solid black;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+
+.footer app-footer {
+  width: 100%;
+}

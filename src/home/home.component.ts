@@ -4,10 +4,11 @@ import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { ProductCarouselComponent } from '../product-carousel/product-carousel.component';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, RouterOutlet, NavbarComponent, ProductCarouselComponent],
+  imports: [CommonModule, RouterOutlet, NavbarComponent, ProductCarouselComponent, FooterComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   standalone: true ,

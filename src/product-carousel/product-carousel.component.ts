@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./product-carousel.component.scss'],
 })
 export class ProductCarouselComponent implements AfterViewInit {
+  hoveredIndex: number | null = null;
   // Use @ViewChild to get references to our HTML elements
   @ViewChild('imagesRow') imagesRow!: ElementRef<HTMLDivElement>;
   @ViewChild('imagesContainer') imagesContainer!: ElementRef<HTMLDivElement>;

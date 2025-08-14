@@ -4,9 +4,14 @@
   <div class="images" #imagesContainer>
     <!-- This is the row of images that will be scrolled -->
     <div class="images-row" #imagesRow>
-      @for(product of products; track $index) {
-        <div class="image-item">
-          <img [src]="product.image" [alt]="product.name" />
+      @for(product of products; let i = $index; track $index) {
+        <div class="image-item" (mouseenter)="hoveredIndex = i" (mouseleave)="hoveredIndex = null">
+          <img *ngIf="hoveredIndex !== i" [src]="product.image" [alt]="product.name" />
+          <div class="product-info-overlay" *ngIf="hoveredIndex === i">
+            <p class="product-price">From ${{ product.price }}</p>
+            <p class="product-name">{{ product.name }}</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
+          </div>
         </div>
       }
     </div>
